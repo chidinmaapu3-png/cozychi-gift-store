@@ -1,0 +1,13 @@
+cozychi-gift-store/
+│
+├── public/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── wrangler.jsonc   ← HERE, outside public
+├── index.html
+├── script.js
+├── style.css
+├── README.md
+└── cozychi-github-website.zip
