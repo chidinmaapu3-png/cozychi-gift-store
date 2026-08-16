@@ -1,0 +1,382 @@
+/* CozyChi Gift Store - main stylesheet */
+
+:root {
+  --cream: #fffaf4;
+  --beige: #f3e7d7;
+  --sage: #a8b89f;
+  --sage-dark: #66745f;
+  --pink: #e9a9b5;
+  --brown: #4b3a32;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(75, 58, 50, 0.10);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--brown);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+/* Header / navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 250, 244, 0.96);
+  border-bottom: 1px solid rgba(75, 58, 50, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+.site-header .container,
+.site-header .nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  color: var(--brown);
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.logo span {
+  color: var(--pink);
+}
+
+nav,
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a,
+.nav-menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--brown);
+}
+
+nav a:hover,
+.nav-menu a:hover {
+  color: var(--sage-dark);
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid rgba(75, 58, 50, 0.20);
+  background: var(--white);
+  border-radius: 10px;
+  padding: 8px 11px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* General sections */
+section {
+  padding: 80px 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--brown);
+  line-height: 1.15;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+p {
+  max-width: 720px;
+}
+
+/* Hero */
+.hero {
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(233, 169, 181, 0.30), transparent 28%),
+    radial-gradient(circle at 15% 80%, rgba(168, 184, 159, 0.30), transparent 30%),
+    linear-gradient(135deg, #fffaf4 0%, #f5eadc 100%);
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero p {
+  font-size: 1.12rem;
+  color: #66564d;
+}
+
+.hero-actions,
+.buttons,
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+/* Buttons */
+.btn,
+button,
+a.button {
+  display: inline-block;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 22px;
+  background: var(--sage-dark);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover,
+button:hover,
+a.button:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--brown);
+  border: 1px solid rgba(75, 58, 50, 0.18);
+}
+
+/* Intro / feature areas */
+.features,
+.collection-grid,
+.collections,
+.product-grid,
+.products,
+.cards,
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card,
+.collection-card,
+.product-card,
+.feature-card {
+  background: var(--white);
+  border: 1px solid rgba(75, 58, 50, 0.08);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.card h3,
+.collection-card h3,
+.product-card h3,
+.feature-card h3 {
+  margin-bottom: 8px;
+}
+
+.card p,
+.collection-card p,
+.product-card p,
+.feature-card p {
+  color: #75655c;
+}
+
+/* Gift / collection area */
+.shop-collections {
+  background: #f5eee5;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--sage-dark);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+}
+
+/* About */
+.about {
+  background: var(--cream);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Decorative emoji/icon blocks */
+.icon,
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid rgba(75, 58, 50, 0.18);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--brown);
+  font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid rgba(168, 184, 159, 0.55);
+  border-color: var(--sage);
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+/* Footer */
+footer,
+.site-footer {
+  padding: 45px 0;
+  background: var(--brown);
+  color: #fffaf4;
+}
+
+footer a,
+.site-footer a {
+  color: #fffaf4;
+  text-decoration: none;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  opacity: .8;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .site-header .container,
+  .site-header .nav {
+    min-height: 68px;
+  }
+
+  nav,
+  .nav-menu {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .features,
+  .collection-grid,
+  .collections,
+  .product-grid,
+  .products,
+  .cards,
+  .gift-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 12vw, 3.7rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    position: relative;
+  }
+
+  nav,
+  .nav-menu {
+    width: 100%;
+  }
+
+  .hero-actions,
+  .buttons,
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn,
+  a.button {
+    text-align: center;
+  }
+}
